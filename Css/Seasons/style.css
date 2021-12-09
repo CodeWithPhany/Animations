@@ -1790,3 +1790,74 @@ body {
     transform: translateY(-25px);
   }
 }
+
+.cat {
+  visibility: hidden;
+  left: 278px;
+  top: -10px;
+  width: 20px;
+  height: 50px;
+}
+.cat.animated {
+  -webkit-animation: cat 6s ease 2;
+          animation: cat 6s ease 2;
+  visibility: visible;
+}
+.rabbit .head {
+  width: 20px;
+  height: 22px;
+  background-color: var(--rabbit);
+  border-radius: 50%;
+}
+.cat .head:after {
+  content: "";
+  top: 8px;
+  left: 5px;
+  background-color: black;
+  border-radius: 50%;
+  height: 3px;
+  width: 3px;
+  box-shadow: 8px 0 black;
+}
+.cat .head:before {
+  content: "";
+  top: 13px;
+  left: 9px;
+  background-color: #ff8cd0;
+  border-radius: 50%;
+  height: 3px;
+  width: 3px;
+}
+.rabbit .ear {
+  left: 1px;
+  top: -1px;
+  height: 3px;
+  width: 3px;
+  background-color: #ff8cd0;
+  border: var(--rabbit) solid 2px;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-5deg);
+}
+.rabbit .ear:nth-child(2) {
+  left: auto;
+  right: 2px;
+  transform: rotate(5deg);
+}
+
+@-webkit-keyframes rabbit {
+  0%, 80%, 100% {
+    transform: translateY(0px);
+  }
+  40%, 60% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes rabbit {
+  0%, 80%, 100% {
+    transform: translateY(0px);
+  }
+  40%, 60% {
+    transform: translateY(-25px);
+  }
+}

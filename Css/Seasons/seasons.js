@@ -2,6 +2,7 @@ var html = document.getElementsByTagName("html")[0];
 var sun = document.querySelector(".sun");
 var rainbow = document.querySelector(".rainbow");
 var rabbit = document.querySelector(".rabbit");
+var cat = document.querySelector(".cat");
 var snow = document.querySelectorAll(".snow");
 var rain = document.querySelectorAll(".rain");
 var flowers = document.querySelectorAll(".flower");
@@ -37,6 +38,13 @@ function updateSeasons() {
   } else {
     rabbit.classList.remove("animated");
   }
+  
+// add cat if season = winter
+  if (season === seasons[0] || season === seasons[2]) {
+    cat.classList.add("animated");
+  } else {
+    cat.classList.remove("animated");
+  }
 
   //add rainbow if season = spring
   season === seasons[1] ?
@@ -44,6 +52,9 @@ function updateSeasons() {
   rainbow.classList.remove("animated");
   if (season === seasons[1]) {
     html.style.setProperty("--rabbit", "#9E6255");
+  }
+   if (season === seasons[1]) {
+    html.style.setProperty("--cat", "#9E6255");
   }
   //add flowers if season = spring
   flowers.forEach(function (el) {
@@ -56,9 +67,11 @@ function updateSeasons() {
   if (season === seasons[2]) {
     html.style.setProperty("--sun", "#ffb53a");
     html.style.setProperty("--rabbit", "#9E6255");
+     html.style.setProperty("--cat", "#9E6255");
   } else {
     html.style.setProperty("--sun", "transparent");
     html.style.setProperty("--rabbit", "#ffffff");
+     html.style.setProperty("--cat", "#ffffff");
   }
 
   //add rain if season = autumn
